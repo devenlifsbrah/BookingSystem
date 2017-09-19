@@ -1,0 +1,174 @@
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<style>
+	.demo {
+		border:1px solid #C0C0C0;
+		border-collapse:collapse;
+		padding:5px;
+		width:100%;
+		font-family: 'Open Sans', sans-serif;
+
+	}
+	.demo th {
+		border:1px solid #C0C0C0;
+		padding:5px;
+		background:#F0F0F0;
+	}
+	.demo td {
+		border:1px solid #C0C0C0;
+		padding:20px;
+		
+	}
+</style>
+<script>
+
+</script>
+
+<script>
+
+var EmptyTemp = function () { /* Template filler */
+this.Table = document.getElementsByTagName('table')[0];
+this.Table2 = this.Table.getElementsByTagName('tbody')[0];
+this.Table3 = this.Table2.getElementsByTagName('tr');
+
+this.MondaybookSlot = function (timeSlot,BookSlot){ /* Monday Controller */
+    for (i = timeSlot; i < BookSlot; i++){
+   this.Table3[i].getElementsByTagName('td')[1].innerHTML = "This is Sample Info";
+ }
+}
+this.tuesdayBookSlot = function (timeSlot, BookSlot){    /* Tuesday Controller */
+         for (i = timeSlot; i < BookSlot; i++){
+   this.Table3[i].getElementsByTagName('td')[2].innerHTML = "This is Sample Info";
+ }
+}
+ this.wednesdayBookSlot = function (timeSlot, BookSlot) {
+ 
+     for (i = timeSlot; i < BookSlot; i++){ /* set the lower bound limiter to whatever the ajax request gets to highlight em */
+     this.Table3[i].getElementsByTagName('td')[3].innerHTML = "This is Sample Info";
+  }
+ }
+}
+
+
+
+/* need to figure a way to choose specific time barrier */
+
+
+$(document).ready(function(){
+$.ajax({ type:'GET',
+dataType:"json",
+url:'http://127.0.0.1:3000/j',
+		 success: function(order){
+		 for (var x in order.DaysOfWeek.Monday){
+		 console.log(order.DaysOfWeek.Monday[x]
+		 }
+		 
+		 
+		 var MonSlot = new EmptyTemp(); /* use these to send and retrieve ajax requests to fill page */
+		 MonSlot.MondaybookSlot(order.DayValues.First.Monday, order.DayValues.First.DayCount); /*********CONTROLLERS*******/
+         MonSlot.tuesdayBookSlot(order.DayValues.Second.Tuesday, order.DayValues.Second.DayCount);
+		 MonSlot.wednesdayBookSlot(order.DayValues.Third.Wed, order.DayValues.Third.DayCount);
+		 }  
+        });
+		
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+
+<table class="demo">
+	<caption>Table 1</caption>
+	<thead>
+	<tr>
+		<th>Time</th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>9:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>10:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>11:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>12:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

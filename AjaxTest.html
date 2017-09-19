@@ -1,0 +1,135 @@
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<style>
+	.demo {
+		border:1px solid #C0C0C0;
+		border-collapse:collapse;
+		padding:5px;
+		width:100%;
+		font-family: 'Open Sans', sans-serif;
+
+	}
+	.demo th {
+		border:1px solid #C0C0C0;
+		padding:5px;
+		background:#F0F0F0;
+	}
+	.demo td {
+		border:1px solid #C0C0C0;
+		padding:20px;
+		
+	}
+</style>
+<script>
+$(document).ready(function(){
+$.ajax({ type:'GET',
+dataType:"json",
+url:'http://127.0.0.1:3000/j',
+		 success: function(order) {
+		 console.log(order)
+		 
+		 }
+		 
+         
+        });
+		
+
+})
+</script>
+
+<script>
+window.onload = function () {
+var tableInfo = document.getElementsByClassName('td')[0][2];
+
+tableInfo.innerHTML = "This is Sample Info";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<body>
+
+<table class="demo">
+	<caption>Table 1</caption>
+	<thead>
+	<tr>
+		<th>Time</th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>9:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>10:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>11:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>12:00</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	</tbody>
+</table>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

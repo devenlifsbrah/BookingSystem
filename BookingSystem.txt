@@ -1,0 +1,55 @@
+Simple booking service
+ 
+ 
+ 
+UserDashboard
+
+
+
+User logs in verification
+User.Login(){
+ User.Token(TimeInit);
+ 
+}
+Tools
+PassportJS
+Use token tools to help withe loginTimes
+I need an email verification tool to do this.
+Sep file
+
+
+
+
+User submission process
+User.BookSubmit(){
+
+
+}
+This is a function that runs values into the database. It takes the info from the dom and adds it under the
+schema thats associated with the username
+
+
+database info Retrive and view
+View.SubmissionArray(){
+
+
+}
+This plasters the data onto the MainOwner OwnerDashBoardScreen immediately after submitted.
+Here, the look at the grid and can make changes to it.
+
+
+What happens when changing info?
+Do not allow booking On a time block thats occupied.
+Have a rebooking button appear.
+
+Change database info
+InfoAccess()
+This allows access to the database and can modify/replace other data.
+
+
+Remind owner of business call
+View.RemindTimer();
+
+have owner delete call (or auto delete after certain time)
+View.Delete();
+
